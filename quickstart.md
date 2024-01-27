@@ -1,37 +1,31 @@
-# Quickstar
+# Quickstart
 
-Criar ambiente virtual
+## Criar ambiente virtual
 
 ```python
 python3 -m venv venv
 ```
 
-Ativar 
+## Ativar ambiente virtual
+ 
 ```python
 source venv/bin/activate
 ```
-instalar dependencias
+
+## Instalar dependências
+
 ```pip
 pip3 install -r requirements.txt
 ```
-iniciar server
+
+## Iniciar server
 
 ```pip
 python3 manage.py runserver
 ```
 
-tests
+## Tests
+
 ```python
 python3 manage.py test
-```
-
-usuario admin default
-
-+ usuario: admin
-+ senha: 1234
-
-como criar usuario admin
-
-```python
-python3 manage.py createsuperuser
 ```

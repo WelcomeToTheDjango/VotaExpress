@@ -18,6 +18,14 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
+## Crie um arquivo .ENV
+
+> Por motivos de segurança não disponibilizamos nossa SECRET_KEY aqui, mas você pode criar um arquivo .env na raiz do seu projeto
+
+```bash
+echo SECRET_KEY="your-secret-here" > .env
+```
+
 ## Iniciar server
 
 ```pip
@@ -29,3 +37,4 @@ python3 manage.py runserver
 ```python
 python3 manage.py test
 ```
+

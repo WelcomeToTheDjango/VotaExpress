@@ -1,0 +1,12 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <p>Use o botão a seguir para carregar os dados do modelo <strong>{{nome_do_modelo}}</strong></p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Enviar Dados</button>
+    </form>
+    <small>O unico formato permitido é .csv</small>
+
+{% endblock content %}

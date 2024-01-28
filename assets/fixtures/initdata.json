@@ -1,0 +1,1168 @@
+[
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 6,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 6,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 6,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 6,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add categoria",
+        "content_type": 7,
+        "codename": "add_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change categoria",
+        "content_type": 7,
+        "codename": "change_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete categoria",
+        "content_type": 7,
+        "codename": "delete_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view categoria",
+        "content_type": 7,
+        "codename": "view_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add enquete",
+        "content_type": 8,
+        "codename": "add_enquete"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change enquete",
+        "content_type": 8,
+        "codename": "change_enquete"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete enquete",
+        "content_type": 8,
+        "codename": "delete_enquete"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view enquete",
+        "content_type": 8,
+        "codename": "view_enquete"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add pergunta",
+        "content_type": 9,
+        "codename": "add_pergunta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change pergunta",
+        "content_type": 9,
+        "codename": "change_pergunta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete pergunta",
+        "content_type": 9,
+        "codename": "delete_pergunta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view pergunta",
+        "content_type": 9,
+        "codename": "view_pergunta"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add opcoes",
+        "content_type": 10,
+        "codename": "add_opcoes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change opcoes",
+        "content_type": 10,
+        "codename": "change_opcoes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete opcoes",
+        "content_type": 10,
+        "codename": "delete_opcoes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view opcoes",
+        "content_type": 10,
+        "codename": "view_opcoes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add voto",
+        "content_type": 11,
+        "codename": "add_voto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change voto",
+        "content_type": 11,
+        "codename": "change_voto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete voto",
+        "content_type": 11,
+        "codename": "delete_voto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view voto",
+        "content_type": 11,
+        "codename": "view_voto"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "enquetes",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "enquetes",
+        "model": "categoria"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "enquetes",
+        "model": "enquete"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "enquetes",
+        "model": "pergunta"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "enquetes",
+        "model": "opcoes"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "enquetes",
+        "model": "voto"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7qwnx6wj90rccfmkmlvdvu6lb5tfvola",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSG8BZfu_QYyMIxUDSSlXRn_3TbpQrf3nHPfLMK61LiOMscJ2YVJdvrdEuRnaTvAB7R757m3ZZ4S3xV-0MFvHcvrerh_BxVG3WpljXaehArCSxmEEpacCAoz0NkboqIyISA4kHYTKWtNXloRcjK-JPb5AsFAN9c:1rUBmy:kvCvRR2P0Du76l49dvs-_6wmc6yTh6_mq6wbVxsH1YU",
+        "expire_date": "2024-02-11T20:30:00.021Z"
+    }
+},
+{
+    "model": "enquetes.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$LM1QoXcQKLIMW0mEaXGCyg$soRIMjRnZ1HMxczzBNMiyZE1mGe68Q0VUVhoQLxWIuY=",
+        "last_login": "2024-01-28T20:30:00.015Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:29:48.323Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$BQBu9CIiNks7Lm3AYGoOWE$Y2uGX4LFqTCqunJoOS9uiLKg3IRPL19wIqmCgNlLkbo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Juan",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:30:22.917Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$lVWkCy48d8rdujYrrISWxb$ybksrDcKtiEyy/65g7yyXwNysWTGXQ4PYNsaBH1yMEo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Pedro",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:30:23.259Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$720000$nyiz4gNxycDEOcXWcuPGPu$QeZnMGW7BIn9+WtI5xii3xlezY4WZsN33Qfb1PnNYqE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Santiago",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:30:23.588Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.categoria",
+    "pk": 1,
+    "fields": {
+        "titulo": "Saude"
+    }
+},
+{
+    "model": "enquetes.categoria",
+    "pk": 2,
+    "fields": {
+        "titulo": "Arte"
+    }
+},
+{
+    "model": "enquetes.enquete",
+    "pk": 1,
+    "fields": {
+        "titulo": "Hábitos Alimentares",
+        "categoria": 1,
+        "criador": 1,
+        "aberto": true
+    }
+},
+{
+    "model": "enquetes.enquete",
+    "pk": 2,
+    "fields": {
+        "titulo": "Atividades Físicas",
+        "categoria": 1,
+        "criador": 2,
+        "aberto": true
+    }
+},
+{
+    "model": "enquetes.enquete",
+    "pk": 3,
+    "fields": {
+        "titulo": "Entretenimento e Cultura",
+        "categoria": 2,
+        "criador": 1,
+        "aberto": true
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 1,
+    "fields": {
+        "titulo": "Com que frequência você consome frutas?",
+        "enquete": 1
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 2,
+    "fields": {
+        "titulo": "Você prefere alimentos orgânicos?",
+        "enquete": 1
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 3,
+    "fields": {
+        "titulo": "Quanto açúcar você adiciona ao café ou chá?",
+        "enquete": 1
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 4,
+    "fields": {
+        "titulo": "Qual é a sua atividade física favorita?",
+        "enquete": 2
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 5,
+    "fields": {
+        "titulo": "Com que frequência você pratica exercícios aeróbicos?",
+        "enquete": 2
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 6,
+    "fields": {
+        "titulo": "Você prefere atividades ao ar livre ou em ambientes fechados?",
+        "enquete": 2
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 7,
+    "fields": {
+        "titulo": "Qual é o seu gênero literário preferido?",
+        "enquete": 3
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 8,
+    "fields": {
+        "titulo": "Você prefere assistir a filmes no cinema ou em casa?",
+        "enquete": 3
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 9,
+    "fields": {
+        "titulo": "Com que frequência você visita museus ou exposições?",
+        "enquete": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 1,
+    "fields": {
+        "descricao": "Diariamente",
+        "pergunta": 1
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 2,
+    "fields": {
+        "descricao": "Algumas vezes por semana ",
+        "pergunta": 1
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 3,
+    "fields": {
+        "descricao": "Raramente",
+        "pergunta": 1
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 4,
+    "fields": {
+        "descricao": "Sim, sempre ",
+        "pergunta": 2
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 5,
+    "fields": {
+        "descricao": "Às vezes",
+        "pergunta": 2
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 6,
+    "fields": {
+        "descricao": "Não, não faço questão",
+        "pergunta": 2
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 7,
+    "fields": {
+        "descricao": "Nenhum",
+        "pergunta": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 8,
+    "fields": {
+        "descricao": "Um pouco",
+        "pergunta": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 9,
+    "fields": {
+        "descricao": "Muito",
+        "pergunta": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 10,
+    "fields": {
+        "descricao": "Corrida",
+        "pergunta": 4
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 11,
+    "fields": {
+        "descricao": "Yoga",
+        "pergunta": 4
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 12,
+    "fields": {
+        "descricao": "Musculação",
+        "pergunta": 4
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 13,
+    "fields": {
+        "descricao": "Todos os dias",
+        "pergunta": 5
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 14,
+    "fields": {
+        "descricao": "Algumas vezes por semana",
+        "pergunta": 5
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 15,
+    "fields": {
+        "descricao": "Raramente",
+        "pergunta": 5
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 16,
+    "fields": {
+        "descricao": "Ao ar livre",
+        "pergunta": 6
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 17,
+    "fields": {
+        "descricao": "Em ambientes fechados",
+        "pergunta": 6
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 18,
+    "fields": {
+        "descricao": "Tanto faz",
+        "pergunta": 6
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 19,
+    "fields": {
+        "descricao": "Ficção",
+        "pergunta": 7
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 20,
+    "fields": {
+        "descricao": "Não-ficção",
+        "pergunta": 7
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 21,
+    "fields": {
+        "descricao": "Poesia",
+        "pergunta": 7
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 22,
+    "fields": {
+        "descricao": "No cinema",
+        "pergunta": 8
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 23,
+    "fields": {
+        "descricao": "Em casa",
+        "pergunta": 8
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 24,
+    "fields": {
+        "descricao": "Tanto faz",
+        "pergunta": 8
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 25,
+    "fields": {
+        "descricao": "Regularmente",
+        "pergunta": 9
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 26,
+    "fields": {
+        "descricao": "De vez em quando",
+        "pergunta": 9
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 27,
+    "fields": {
+        "descricao": "Raramente",
+        "pergunta": 9
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 1,
+    "fields": {
+        "usuario": 1,
+        "enquete": 1,
+        "pergunta": 1,
+        "resposta": 2
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 2,
+    "fields": {
+        "usuario": 1,
+        "enquete": 1,
+        "pergunta": 2,
+        "resposta": 6
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 3,
+    "fields": {
+        "usuario": 1,
+        "enquete": 1,
+        "pergunta": 3,
+        "resposta": 8
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 4,
+    "fields": {
+        "usuario": 1,
+        "enquete": 2,
+        "pergunta": 4,
+        "resposta": 11
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 5,
+    "fields": {
+        "usuario": 1,
+        "enquete": 2,
+        "pergunta": 5,
+        "resposta": 13
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 6,
+    "fields": {
+        "usuario": 1,
+        "enquete": 2,
+        "pergunta": 6,
+        "resposta": 17
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 7,
+    "fields": {
+        "usuario": 1,
+        "enquete": 3,
+        "pergunta": 7,
+        "resposta": 20
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 8,
+    "fields": {
+        "usuario": 1,
+        "enquete": 3,
+        "pergunta": 8,
+        "resposta": 23
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 9,
+    "fields": {
+        "usuario": 1,
+        "enquete": 3,
+        "pergunta": 9,
+        "resposta": 25
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 10,
+    "fields": {
+        "usuario": 2,
+        "enquete": 1,
+        "pergunta": 1,
+        "resposta": 1
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 11,
+    "fields": {
+        "usuario": 2,
+        "enquete": 1,
+        "pergunta": 2,
+        "resposta": 5
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 12,
+    "fields": {
+        "usuario": 2,
+        "enquete": 1,
+        "pergunta": 3,
+        "resposta": 7
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 13,
+    "fields": {
+        "usuario": 2,
+        "enquete": 2,
+        "pergunta": 4,
+        "resposta": 12
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 14,
+    "fields": {
+        "usuario": 2,
+        "enquete": 2,
+        "pergunta": 5,
+        "resposta": 14
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 15,
+    "fields": {
+        "usuario": 2,
+        "enquete": 2,
+        "pergunta": 6,
+        "resposta": 18
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 16,
+    "fields": {
+        "usuario": 2,
+        "enquete": 3,
+        "pergunta": 7,
+        "resposta": 21
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 17,
+    "fields": {
+        "usuario": 2,
+        "enquete": 3,
+        "pergunta": 8,
+        "resposta": 23
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 18,
+    "fields": {
+        "usuario": 2,
+        "enquete": 3,
+        "pergunta": 9,
+        "resposta": 26
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 19,
+    "fields": {
+        "usuario": 3,
+        "enquete": 1,
+        "pergunta": 1,
+        "resposta": 3
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 20,
+    "fields": {
+        "usuario": 3,
+        "enquete": 1,
+        "pergunta": 2,
+        "resposta": 6
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 21,
+    "fields": {
+        "usuario": 3,
+        "enquete": 1,
+        "pergunta": 3,
+        "resposta": 9
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 22,
+    "fields": {
+        "usuario": 3,
+        "enquete": 2,
+        "pergunta": 4,
+        "resposta": 10
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 23,
+    "fields": {
+        "usuario": 3,
+        "enquete": 2,
+        "pergunta": 5,
+        "resposta": 13
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 24,
+    "fields": {
+        "usuario": 3,
+        "enquete": 2,
+        "pergunta": 6,
+        "resposta": 17
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 25,
+    "fields": {
+        "usuario": 3,
+        "enquete": 3,
+        "pergunta": 7,
+        "resposta": 20
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 26,
+    "fields": {
+        "usuario": 3,
+        "enquete": 3,
+        "pergunta": 8,
+        "resposta": 22
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 27,
+    "fields": {
+        "usuario": 3,
+        "enquete": 3,
+        "pergunta": 9,
+        "resposta": 27
+    }
+}
+]

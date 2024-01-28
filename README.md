@@ -38,3 +38,8 @@ python3 manage.py runserver
 python3 manage.py test
 ```
 
+## Carregar Banco de Dados (opcional)
+
+```python
+python3 manage.py loaddata initdata.json
+```

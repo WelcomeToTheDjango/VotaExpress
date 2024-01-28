@@ -7,9 +7,8 @@ from django.core.exceptions import ValidationError
 class User(AbstractUser):
     """Extende o modelo base do Django
     aqui podemos adicionar campos personalizados"""
-
     pass
-    
+
     def __str__(self):
         return self.username
 

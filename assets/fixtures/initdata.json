@@ -1,0 +1,740 @@
+[
+{
+    "model": "sessions.session",
+    "pk": "7qwnx6wj90rccfmkmlvdvu6lb5tfvola",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSG8BZfu_QYyMIxUDSSlXRn_3TbpQrf3nHPfLMK61LiOMscJ2YVJdvrdEuRnaTvAB7R757m3ZZ4S3xV-0MFvHcvrerh_BxVG3WpljXaehArCSxmEEpacCAoz0NkboqIyISA4kHYTKWtNXloRcjK-JPb5AsFAN9c:1rUBmy:kvCvRR2P0Du76l49dvs-_6wmc6yTh6_mq6wbVxsH1YU",
+        "expire_date": "2024-02-11T20:30:00.021Z"
+    }
+},
+{
+    "model": "enquetes.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$LM1QoXcQKLIMW0mEaXGCyg$soRIMjRnZ1HMxczzBNMiyZE1mGe68Q0VUVhoQLxWIuY=",
+        "last_login": "2024-01-28T20:30:00.015Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:29:48.323Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$BQBu9CIiNks7Lm3AYGoOWE$Y2uGX4LFqTCqunJoOS9uiLKg3IRPL19wIqmCgNlLkbo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Juan",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:30:22.917Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$lVWkCy48d8rdujYrrISWxb$ybksrDcKtiEyy/65g7yyXwNysWTGXQ4PYNsaBH1yMEo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Pedro",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:30:23.259Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$nyiz4gNxycDEOcXWcuPGPu$QeZnMGW7BIn9+WtI5xii3xlezY4WZsN33Qfb1PnNYqE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Santiago",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-01-28T20:30:23.588Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "enquetes.categoria",
+    "pk": 1,
+    "fields": {
+        "titulo": "Saude"
+    }
+},
+{
+    "model": "enquetes.categoria",
+    "pk": 2,
+    "fields": {
+        "titulo": "Arte"
+    }
+},
+{
+    "model": "enquetes.enquete",
+    "pk": 1,
+    "fields": {
+        "titulo": "Hábitos Alimentares",
+        "categoria": 1,
+        "criador": [
+            "admin"
+        ],
+        "aberto": true
+    }
+},
+{
+    "model": "enquetes.enquete",
+    "pk": 2,
+    "fields": {
+        "titulo": "Atividades Físicas",
+        "categoria": 1,
+        "criador": [
+            "Juan"
+        ],
+        "aberto": true
+    }
+},
+{
+    "model": "enquetes.enquete",
+    "pk": 3,
+    "fields": {
+        "titulo": "Entretenimento e Cultura",
+        "categoria": 2,
+        "criador": [
+            "admin"
+        ],
+        "aberto": true
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 1,
+    "fields": {
+        "titulo": "Com que frequência você consome frutas?",
+        "enquete": 1
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 2,
+    "fields": {
+        "titulo": "Você prefere alimentos orgânicos?",
+        "enquete": 1
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 3,
+    "fields": {
+        "titulo": "Quanto açúcar você adiciona ao café ou chá?",
+        "enquete": 1
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 4,
+    "fields": {
+        "titulo": "Qual é a sua atividade física favorita?",
+        "enquete": 2
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 5,
+    "fields": {
+        "titulo": "Com que frequência você pratica exercícios aeróbicos?",
+        "enquete": 2
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 6,
+    "fields": {
+        "titulo": "Você prefere atividades ao ar livre ou em ambientes fechados?",
+        "enquete": 2
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 7,
+    "fields": {
+        "titulo": "Qual é o seu gênero literário preferido?",
+        "enquete": 3
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 8,
+    "fields": {
+        "titulo": "Você prefere assistir a filmes no cinema ou em casa?",
+        "enquete": 3
+    }
+},
+{
+    "model": "enquetes.pergunta",
+    "pk": 9,
+    "fields": {
+        "titulo": "Com que frequência você visita museus ou exposições?",
+        "enquete": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 1,
+    "fields": {
+        "descricao": "Diariamente",
+        "pergunta": 1
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 2,
+    "fields": {
+        "descricao": "Algumas vezes por semana ",
+        "pergunta": 1
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 3,
+    "fields": {
+        "descricao": "Raramente",
+        "pergunta": 1
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 4,
+    "fields": {
+        "descricao": "Sim, sempre ",
+        "pergunta": 2
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 5,
+    "fields": {
+        "descricao": "Às vezes",
+        "pergunta": 2
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 6,
+    "fields": {
+        "descricao": "Não, não faço questão",
+        "pergunta": 2
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 7,
+    "fields": {
+        "descricao": "Nenhum",
+        "pergunta": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 8,
+    "fields": {
+        "descricao": "Um pouco",
+        "pergunta": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 9,
+    "fields": {
+        "descricao": "Muito",
+        "pergunta": 3
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 10,
+    "fields": {
+        "descricao": "Corrida",
+        "pergunta": 4
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 11,
+    "fields": {
+        "descricao": "Yoga",
+        "pergunta": 4
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 12,
+    "fields": {
+        "descricao": "Musculação",
+        "pergunta": 4
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 13,
+    "fields": {
+        "descricao": "Todos os dias",
+        "pergunta": 5
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 14,
+    "fields": {
+        "descricao": "Algumas vezes por semana",
+        "pergunta": 5
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 15,
+    "fields": {
+        "descricao": "Raramente",
+        "pergunta": 5
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 16,
+    "fields": {
+        "descricao": "Ao ar livre",
+        "pergunta": 6
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 17,
+    "fields": {
+        "descricao": "Em ambientes fechados",
+        "pergunta": 6
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 18,
+    "fields": {
+        "descricao": "Tanto faz",
+        "pergunta": 6
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 19,
+    "fields": {
+        "descricao": "Ficção",
+        "pergunta": 7
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 20,
+    "fields": {
+        "descricao": "Não-ficção",
+        "pergunta": 7
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 21,
+    "fields": {
+        "descricao": "Poesia",
+        "pergunta": 7
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 22,
+    "fields": {
+        "descricao": "No cinema",
+        "pergunta": 8
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 23,
+    "fields": {
+        "descricao": "Em casa",
+        "pergunta": 8
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 24,
+    "fields": {
+        "descricao": "Tanto faz",
+        "pergunta": 8
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 25,
+    "fields": {
+        "descricao": "Regularmente",
+        "pergunta": 9
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 26,
+    "fields": {
+        "descricao": "De vez em quando",
+        "pergunta": 9
+    }
+},
+{
+    "model": "enquetes.opcoes",
+    "pk": 27,
+    "fields": {
+        "descricao": "Raramente",
+        "pergunta": 9
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 1,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 1,
+        "pergunta": 1,
+        "resposta": 2
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 2,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 1,
+        "pergunta": 2,
+        "resposta": 6
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 3,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 1,
+        "pergunta": 3,
+        "resposta": 8
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 4,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 2,
+        "pergunta": 4,
+        "resposta": 11
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 5,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 2,
+        "pergunta": 5,
+        "resposta": 13
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 6,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 2,
+        "pergunta": 6,
+        "resposta": 17
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 7,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 3,
+        "pergunta": 7,
+        "resposta": 20
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 8,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 3,
+        "pergunta": 8,
+        "resposta": 23
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 9,
+    "fields": {
+        "usuario": [
+            "admin"
+        ],
+        "enquete": 3,
+        "pergunta": 9,
+        "resposta": 25
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 10,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 1,
+        "pergunta": 1,
+        "resposta": 1
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 11,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 1,
+        "pergunta": 2,
+        "resposta": 5
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 12,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 1,
+        "pergunta": 3,
+        "resposta": 7
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 13,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 2,
+        "pergunta": 4,
+        "resposta": 12
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 14,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 2,
+        "pergunta": 5,
+        "resposta": 14
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 15,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 2,
+        "pergunta": 6,
+        "resposta": 18
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 16,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 3,
+        "pergunta": 7,
+        "resposta": 21
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 17,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 3,
+        "pergunta": 8,
+        "resposta": 23
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 18,
+    "fields": {
+        "usuario": [
+            "Juan"
+        ],
+        "enquete": 3,
+        "pergunta": 9,
+        "resposta": 26
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 19,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 1,
+        "pergunta": 1,
+        "resposta": 3
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 20,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 1,
+        "pergunta": 2,
+        "resposta": 6
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 21,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 1,
+        "pergunta": 3,
+        "resposta": 9
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 22,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 2,
+        "pergunta": 4,
+        "resposta": 10
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 23,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 2,
+        "pergunta": 5,
+        "resposta": 13
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 24,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 2,
+        "pergunta": 6,
+        "resposta": 17
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 25,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 3,
+        "pergunta": 7,
+        "resposta": 20
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 26,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 3,
+        "pergunta": 8,
+        "resposta": 22
+    }
+},
+{
+    "model": "enquetes.voto",
+    "pk": 27,
+    "fields": {
+        "usuario": [
+            "Pedro"
+        ],
+        "enquete": 3,
+        "pergunta": 9,
+        "resposta": 27
+    }
+}
+]

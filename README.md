@@ -2,13 +2,13 @@
 
 ## Criar ambiente virtual
 
-```python
+```bash
 python3 -m venv venv
 ```
 
 ## Ativar ambiente virtual
  
-```python
+```bash
 source venv/bin/activate
 ```
 
@@ -26,6 +26,12 @@ pip3 install -r requirements.txt
 echo SECRET_KEY="your-secret-here" > .env
 ```
 
+## Faça as migrações
+
+```bash
+python3 manage.py migrate
+```
+
 ## Iniciar server
 
 ```pip
@@ -34,7 +40,12 @@ python3 manage.py runserver
 
 ## Tests
 
-```python
+```bash
 python3 manage.py test
 ```
 
+## Carregar Banco de Dados (opcional)
+
+```bash
+python3 manage.py loaddata initdata.json
+```

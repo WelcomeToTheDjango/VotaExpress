@@ -53,8 +53,8 @@ class Voto(models.Model):
     """representa um voto"""
 
     usuario = models.ForeignKey(User, blank=True, null=True, related_name="votos", on_delete=models.SET_NULL)
-    enquete = models.ForeignKey(Enquete, related_name="votos", on_delete=models.DO_NOTHING)
-    pergunta = models.ForeignKey(Pergunta, related_name="votos", on_delete=models.DO_NOTHING)
+    enquete = models.ForeignKey(Enquete, related_name="votos", on_delete=models.CASCADE)
+    pergunta = models.ForeignKey(Pergunta, related_name="votos", on_delete=models.CASCADE)
     resposta = models.ForeignKey(Opcoes, blank=True, null=True, related_name="votos", on_delete=models.SET_NULL)
 
     def __str__(self):

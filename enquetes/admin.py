@@ -14,6 +14,7 @@ class CustomAdmin(admin.ModelAdmin):
     """
     Classe personalizada para adicionar a funcionalidade de subir dados via .csv
     """
+
     change_list_template = "admin/customs/change_list.html"
 
     def get_urls(self):

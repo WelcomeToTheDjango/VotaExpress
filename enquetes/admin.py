@@ -15,13 +15,15 @@ class CustomAdmin(admin.ModelAdmin):
     Classe personalizada para adicionar a funcionalidade de subir dados via .csv
     """
 
+    change_list_template = "admin/customs/change_list.html"
+
     def get_urls(self):
         """
         Adiciona o registro de uma nova url no admin
         """
 
         urls = super().get_urls()
-        new_urls = [path("upload-csv/", self.upload_csv, name="upload_csv")]
+        new_urls = [path("upload-csv/", self.upload_csv)]
 
         return new_urls + urls
 

@@ -8,31 +8,31 @@ from enquetes.models import (
     Voto,
 )
 
+
 class TestVoto(TestCase):
     def setUp(self):
-
         # ==== USERS ====
         user_1_data = {
-            'username': 'Joao',
-            'password': '1234',
+            "username": "Joao",
+            "password": "1234",
         }
         user_2_data = {
-            'username': 'tiago',
-            'password': '5678',
+            "username": "tiago",
+            "password": "5678",
         }
         user_3_data = {
-            'username': 'maximiliano',
-            'password': 'password',
+            "username": "maximiliano",
+            "password": "password",
         }
         self.user1 = User.objects.create(**user_1_data)
         self.user2 = User.objects.create(**user_2_data)
         self.user3 = User.objects.create(**user_3_data)
 
         # ==== ENQUETES ====
-        
+
         enquete_1_data = {
-            'titulo': 'Comidas do Brasil',
-            'criador': self.user1,
+            "titulo": "Comidas do Brasil",
+            "criador": self.user1,
             # categoria pode ser null
             # usuario nao precisa porque é many to many
             # aberto é True por default
@@ -45,30 +45,23 @@ class TestVoto(TestCase):
         # pra enquete1
 
         pergunta_1 = {
-            'titulo' : 'Qual é a comida mais gostosa do Brasil?',
-            'enquete' : self.enquete1
+            "titulo": "Qual é a comida mais gostosa do Brasil?",
+            "enquete": self.enquete1,
         }
 
         self.enquete1_pergunta_1 = Pergunta.objects.create(**pergunta_1)
-        
-        
+
         # ==== OPCOES ====
 
         # pra enquete1
         #       pergunta1
 
-        opcao_1 = {
-            'descricao' : "O Päo de Queijo",
-            'pergunta' : self.enquete1_pergunta_1
-        }
+        opcao_1 = {"descricao": "O Päo de Queijo", "pergunta": self.enquete1_pergunta_1}
         opcao_2 = {
-            'descricao' : "A farofa de Mandioca",
-            'pergunta' : self.enquete1_pergunta_1
+            "descricao": "A farofa de Mandioca",
+            "pergunta": self.enquete1_pergunta_1,
         }
-        opcao_3 = {
-            'descricao' : "Feijoada",
-            'pergunta' : self.enquete1_pergunta_1
-        }
+        opcao_3 = {"descricao": "Feijoada", "pergunta": self.enquete1_pergunta_1}
 
         self.enquete1_pergunta_1_opcao_1 = Opcoes.objects.create(**opcao_1)
         self.enquete1_pergunta_1_opcao_2 = Opcoes.objects.create(**opcao_2)
@@ -84,14 +77,14 @@ class TestVoto(TestCase):
         self.assertIsInstance(self.enquete1_pergunta_1_opcao_1, Opcoes)
         self.assertIsInstance(self.enquete1_pergunta_1_opcao_2, Opcoes)
         self.assertIsInstance(self.enquete1_pergunta_1_opcao_3, Opcoes)
-        
+
     def test_users_can_vote(self):
         """criação de voto e conteio de votos por enquete"""
         voto = Voto(
             usuario=self.user2,
             enquete=self.enquete1,
             pergunta=self.enquete1_pergunta_1,
-            resposta=self.enquete1_pergunta_1_opcao_2
+            resposta=self.enquete1_pergunta_1_opcao_2,
         )
         voto.save()
         votos_do_enquete = self.enquete1.votos.count()

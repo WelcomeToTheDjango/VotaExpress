@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # NOSSAS APPS
     "enquetes",
     # APPS DE TERCEIROS
+    "coverage",
 ]
 
 AUTH_USER_MODEL = "enquetes.User"

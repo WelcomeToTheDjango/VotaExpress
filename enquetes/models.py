@@ -1,5 +1,4 @@
 from django.db import models
-from django.db.models import F, Q
 from django.contrib.auth.models import AbstractUser
 from django.utils.text import Truncator
 from django.core.exceptions import ValidationError

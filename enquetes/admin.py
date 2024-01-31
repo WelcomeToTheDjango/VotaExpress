@@ -1,25 +1,26 @@
-import csv
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.urls import path, reverse
 from django.contrib import messages
 from django.db import transaction
 from django.contrib import admin
-from enquetes.models import User, Enquete, Pergunta, Opcoes, Voto, Categoria
 
+import csv
+
+from enquetes.models import User, Enquete, Pergunta, Opcoes, Voto, Categoria
 from enquetes.forms import GetDataFromCSVForm
 
 
 class CustomAdmin(admin.ModelAdmin):
     """
-    Classe personalizada para adicionar a funcionalidade de subir dados via .csv
+    This is a custom admin class to add the functionality of uploading data via .csv
     """
 
     change_list_template = "admin/customs/change_list.html"
 
     def get_urls(self):
         """
-        Adiciona o registro de uma nova url no admin
+        Add the url of the upload_csv view to the admin urls
         """
 
         urls = super().get_urls()
@@ -29,45 +30,45 @@ class CustomAdmin(admin.ModelAdmin):
 
     def upload_csv(self, request):
         """
-        Faz o envio de dados via um arquivo .csv
+        This view is used to handle the upload of .csv files
 
-        GET: Mostra um form com um unico campo pra carregar .csv
+        GET: Shows the form to upload the .csv file
 
-        POST: Faz o processamento do form e salva os dados no banco de dados
+        POST: Reads the .csv file and saves the data to the database
         """
 
         if request.method == "GET":
             form = GetDataFromCSVForm()
 
-        if request.method == "POST":
+        elif request.method == "POST":
             form = GetDataFromCSVForm(request.POST, request.FILES)
 
             if form.is_valid():
-                # tratando os dados com livaria csv de python
+                # Read the .csv file
                 csv_file = form.cleaned_data["csv"]
                 data_array_by_rows = csv_file.read().decode("utf-8").splitlines()
                 csv_reader = csv.DictReader(data_array_by_rows)
 
-                # encapsulando o salvado em uma só transaction
+                # Create objects in the database using the collected data
                 try:
                     with transaction.atomic():
                         for dict_obj in csv_reader:
-                            # usando metodo especial para hashear password cuando o modelo é user
+                            # If the model is User, we create a user using the create_user method for password hashing
                             if self.model == User:
                                 User.objects.create_user(**dict_obj)
                             else:
                                 self.model.objects.create(**dict_obj)
 
-                # dando mensagem de erro e redireccionado para url anterior
+                # Show error message when the .csv file is not in the correct format
                 except Exception as e:
                     messages.warning(
                         request,
                         "Não foi possivel processar sua solicitação, por favor verifique o formato de seu arquivo",
                     )
-                    messages.error(request, f"{e}")  # informacões do erro
+                    messages.error(request, f"{e}")
                     return HttpResponseRedirect(request.path_info)
                 else:
-                    # dando mensagem de sucesso e redirecionado para change list do respetivo modelo
+                    # Show success message when the data is saved successfully
                     messages.success(
                         request, "Seus dados foram carregados com sucesso!"
                     )
@@ -83,7 +84,9 @@ class CustomAdmin(admin.ModelAdmin):
 
 
 class OpcoesInline(admin.TabularInline):
-    """para registrar as Opções como parte da admin view de Perguntas"""
+    """
+    This class is used to register the Opcoes model as part of the Pergunta admin view
+    """
 
     model = Opcoes
     extra = 1
@@ -91,13 +94,17 @@ class OpcoesInline(admin.TabularInline):
 
 @admin.register(Pergunta)
 class PerguntaAdmin(CustomAdmin):
-    """registra o modelo Pergunta e coloca um formset de Opções dentro dele"""
+    """
+    This class is used to register the Pergunta model and put an Opcoes formset inside it
+    """
 
     inlines = [OpcoesInline]
 
 
 class PerguntaInline(admin.TabularInline):
-    """para registrar as Perguntas como parte da admin view de Enquete"""
+    """
+    This class is used to register the Pergunta model as part of the Enquete admin view
+    """
 
     model = Pergunta
     extra = 1
@@ -106,7 +113,9 @@ class PerguntaInline(admin.TabularInline):
 
 @admin.register(Enquete)
 class EnqueteAdmin(CustomAdmin):
-    """registra o modelo Enquete y coloca um form de Pergunta dentro dele"""
+    """
+    This class is used to register the Enquete model and put a Pergunta formset inside it
+    """
 
     list_display = ["titulo", "criador"]
     search_fields = ["titulo", "criador"]
@@ -115,21 +124,35 @@ class EnqueteAdmin(CustomAdmin):
 
 @admin.register(Voto)
 class VotoAdmin(CustomAdmin):
-    """registra o modelo Voto em Uso"""
+    """
+    This class is used to register the Voto model
+    """
 
     pass
 
 
 @admin.register(Categoria)
 class CategoriaAdmin(CustomAdmin):
+    """
+    This class is used to register the Categoria model
+    """
+
     pass
 
 
 @admin.register(User)
 class UserAdmin(CustomAdmin):
+    """
+    This class is used to register the User model
+    """
+
     pass
 
 
 @admin.register(Opcoes)
 class OpcoesAdmin(CustomAdmin):
+    """
+    This class is used to register the Opcoes model
+    """
+
     pass

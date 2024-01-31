@@ -36,16 +36,16 @@ ALLOWED_HOSTS = ["*"]  # All hosts for development purposes
 # Application definition
 
 INSTALLED_APPS = [
-    # APPS DO DJANGO
+    # Django Default Apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # NOSSAS APPS
+    # Our apps
     "enquetes",
-    # APPS DE TERCEIROS
+    # Third-party apps
     "coverage",
 ]
 
@@ -134,4 +134,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Fixtures configuration
+# https://docs.djangoproject.com/en/4.2/ref/settings/#fixture-dirs 
+ 
 FIXTURE_DIRS = [BASE_DIR / "assets" / "fixtures"]

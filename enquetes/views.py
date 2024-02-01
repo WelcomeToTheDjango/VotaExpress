@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+# This file is used to handle the requests of the enquetes app
 
-# Create your views here.
+from django.http import HttpResponse
 
 
 def index(request):

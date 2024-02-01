@@ -5,8 +5,9 @@ from django.core.exceptions import ValidationError
 
 
 class User(AbstractUser):
-    """Extende o modelo base do Django
-    aqui podemos adicionar campos personalizados"""
+    """
+    This is a custom user model that extends the base Django model
+    """
 
     pass
 
@@ -15,6 +16,12 @@ class User(AbstractUser):
 
 
 class Categoria(models.Model):
+    """
+    This is a model to represent the categories of the polls
+
+    titulo: The title of the category
+    """
+
     titulo = models.CharField(max_length=120)
 
     def __str__(self):
@@ -22,7 +29,14 @@ class Categoria(models.Model):
 
 
 class Enquete(models.Model):
-    """informação necesaria e basica de um enquete"""
+    """
+    This is a model to represent the polls
+
+    titulo: The title of the poll
+    categoria: The category of the poll, related 1 to 1 with Categoria model
+    criador: The user that created the poll, related 1 to 1 with User model
+    aberto: A boolean field to indicate if the poll is open or closed
+    """
 
     titulo = models.CharField(max_length=120)
     categoria = models.ForeignKey(
@@ -42,7 +56,12 @@ class Enquete(models.Model):
 
 
 class Pergunta(models.Model):
-    """informação necesaria e basica de uma pergunta"""
+    """
+    This is a model to represent the questions of the polls
+
+    titulo: The title of the question
+    enquete: The poll that the question belongs to, related 1 to 1 with Enquete model
+    """
 
     titulo = models.CharField(max_length=120)
     enquete = models.ForeignKey(
@@ -54,7 +73,12 @@ class Pergunta(models.Model):
 
 
 class Opcoes(models.Model):
-    """informação necesaria e basica de uma opção"""
+    """
+    This is a model to represent the options of the questions
+
+    descricao: The description of the option
+    pergunta: The question that the option belongs to, related 1 to 1 with Pergunta model
+    """
 
     descricao = models.TextField()
     pergunta = models.ForeignKey(
@@ -62,12 +86,22 @@ class Opcoes(models.Model):
     )
 
     def __str__(self) -> str:
-        """o Truncator simplesmente limita o numero de palavras"""
+        """
+        The truncator method is used to leave only the first 5 words of the description        
+        """
+
         return Truncator(self.descricao).words(5)
 
 
 class Voto(models.Model):
-    """representa um voto"""
+    """
+    This is a model to represent the votes of the users
+
+    usuario: The user that voted, related 1 to 1 with User model
+    enquete: The poll that the vote belongs to, related 1 to 1 with Enquete model
+    pergunta: The question that the vote belongs to, related 1 to 1 with Pergunta model
+    resposta: The option that the user voted, related 1 to 1 with Opcoes model
+    """
 
     usuario = models.ForeignKey(
         User, blank=True, null=True, related_name="votos", on_delete=models.SET_NULL
@@ -84,8 +118,13 @@ class Voto(models.Model):
         return f"escolha #{self.resposta.id} em #{self.enquete.id}/{self.pergunta.id}"
 
     def save(self, *args, **kwargs):
-        """conferindo qua a resposta corresponda á pergunta
-        e a pergunta correspona ao enquete"""
+        """
+        This methos is used to validate the vote before saving it
+
+        Raises:
+            ValidationError: If the option chosen does not belong to the question
+            ValidationError: If the question chosen does not belong to the poll
+        """
 
         if self.resposta not in self.pergunta.opcoes.all():
             raise ValidationError(
@@ -97,4 +136,4 @@ class Voto(models.Model):
                 "pergunta invalida, por favor escolha uma opcao que corresponda ao enquete"
             )
 
-        super(Voto, self).save(*args, **kwargs)  # chamo ao metodo save 'original'
+        super(Voto, self).save(*args, **kwargs) # Call the "real" save() method.

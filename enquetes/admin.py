@@ -13,7 +13,7 @@ from enquetes.forms import GetDataFromCSVForm
 
 class CustomAdmin(admin.ModelAdmin):
     """
-    This is a custom admin class to add the functionality of uploading data via .csv
+    Improve the functionality of uploading data via .csv
     """
 
     change_list_template = "admin/customs/change_list.html"
@@ -30,7 +30,7 @@ class CustomAdmin(admin.ModelAdmin):
 
     def upload_csv(self, request):
         """
-        This view is used to handle the upload of .csv files
+        Handle the upload of .csv files
 
         GET: Shows the form to upload the .csv file
 
@@ -49,7 +49,7 @@ class CustomAdmin(admin.ModelAdmin):
                 data_array_by_rows = csv_file.read().decode("utf-8").splitlines()
                 csv_reader = csv.DictReader(data_array_by_rows)
 
-                # Create objects in the database using the collected data
+                # Using a transaction to save all data as a single transaction, so if an error occurs, all previous processes are rolled back
                 try:
                     with transaction.atomic():
                         for dict_obj in csv_reader:
@@ -85,7 +85,7 @@ class CustomAdmin(admin.ModelAdmin):
 
 class OpcoesInline(admin.TabularInline):
     """
-    This class is used to register the Opcoes model as part of the Pergunta admin view
+    Register the Opcoes model as part of the Pergunta admin view
     """
 
     model = Opcoes
@@ -95,7 +95,7 @@ class OpcoesInline(admin.TabularInline):
 @admin.register(Pergunta)
 class PerguntaAdmin(CustomAdmin):
     """
-    This class is used to register the Pergunta model and put an Opcoes formset inside it
+    Register the Pergunta model and put an Opcoes formset inside it
     """
 
     inlines = [OpcoesInline]
@@ -103,7 +103,7 @@ class PerguntaAdmin(CustomAdmin):
 
 class PerguntaInline(admin.TabularInline):
     """
-    This class is used to register the Pergunta model as part of the Enquete admin view
+    Register the Pergunta model as part of the Enquete admin view
     """
 
     model = Pergunta
@@ -114,7 +114,7 @@ class PerguntaInline(admin.TabularInline):
 @admin.register(Enquete)
 class EnqueteAdmin(CustomAdmin):
     """
-    This class is used to register the Enquete model and put a Pergunta formset inside it
+    Register the Enquete model and put a Pergunta formset inside it
     """
 
     list_display = ["titulo", "criador"]
@@ -125,7 +125,7 @@ class EnqueteAdmin(CustomAdmin):
 @admin.register(Voto)
 class VotoAdmin(CustomAdmin):
     """
-    This class is used to register the Voto model
+    Register the Voto model in the admin panel
     """
 
     pass
@@ -134,7 +134,7 @@ class VotoAdmin(CustomAdmin):
 @admin.register(Categoria)
 class CategoriaAdmin(CustomAdmin):
     """
-    This class is used to register the Categoria model
+    Register the Categoria model in the admin panel
     """
 
     pass
@@ -143,7 +143,7 @@ class CategoriaAdmin(CustomAdmin):
 @admin.register(User)
 class UserAdmin(CustomAdmin):
     """
-    This class is used to register the User model
+    Register the User model in the admin panel
     """
 
     pass
@@ -152,7 +152,7 @@ class UserAdmin(CustomAdmin):
 @admin.register(Opcoes)
 class OpcoesAdmin(CustomAdmin):
     """
-    This class is used to register the Opcoes model
+    Register the Opcoes model in the admin panel
     """
 
     pass

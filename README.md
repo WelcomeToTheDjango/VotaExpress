@@ -1,5 +1,7 @@
 # VotaExpress
 
+This is a repository for a web application that permits you to create polls in realtime
+
 ## Create virtual environment
 
 ```bash
@@ -36,7 +38,7 @@ python3 manage.py migrate
 
 ## Starting server
 
-> By default the `localhost:8000` will be used for live your server, but you can change it typing the port that you want in the end of the command.
+> By default the `http://127.0.0.1:8000` will be used for live your server, but you can change it typing the port that you want in the end of the command.
 
 ```pip
 python3 manage.py runserver <port-number>(optional)
@@ -52,7 +54,7 @@ python3 manage.py test
 
 ## Loading Pre-Database (Optional)
 
-> If you need a example data, you can simply import a fixture that will populate the database.
+> If you're looking for an example dataset, you can easily import a fixture to fill up the database.
 
 ```bash
 python3 manage.py loaddata initdata.json

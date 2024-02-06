@@ -60,56 +60,16 @@ python3 manage.py test
 python3 manage.py loaddata initdata.json
 ```
 
-## Usando o Tailwind 
+## Using Tailwind for Development
 
-para usar tailwind precisa instalar node
+You need to have node installed, checkout the [node documentation]("https://nodejs.org/en")
 
-<details>
-  <summary>Posde Usar esta guia</summary>
-
-</br>
-Instale o NVM
-    
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-```
-
-Use o NVM para instalar uma versao do Node
-
-```bash
-nvm install 18.18
-```
-
-Pode ver quas versoes de node tem no seu equipe com o comando
-
-```bash
-nvm ls
-``` 
-
-Pode mudar de vercao com o comando nvm use <version-number> por exemplo
-
-```bash 
-nvm use 18.18
-```
-</details>
-</br>
-
-- - -
-Tera que dedicar uma terminal exclusivamente com o node correndo o tailwind.
-
-abra outra terminal e navegue ate o mesmo diretorio do projeto.
-
-O arquivo package.json inclui a dependencia do Tailwndcss, para instalar só precisa rodar:
-
+The package.json includes tailwind, you can install it with
 ```bash
 npm i
 ```
-
-agora,  o seguinte comando iniciara o tailwindcss
+for run tailwind you can use the next command
 
 ```bash
 npm run tailwind
 ```
-para verificar que o proceso funcionou navegue ate http://127.0.0.1:8000/enquetes/
-
-deveria ver a mensagem "Hello Django Team" em cor verde.

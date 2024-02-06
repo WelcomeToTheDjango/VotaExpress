@@ -62,8 +62,39 @@ python3 manage.py loaddata initdata.json
 
 ## Usando o Tailwind 
 
-para usar tailwind precisa instalar node, vose pode seguir [esta guia]("https://www.liquidweb.com/kb/install-nvm-linux/") para instalar node.
+para usar tailwind precisa instalar node
 
+<details>
+  <summary>Posde Usar esta guia</summary>
+
+</br>
+Instale o NVM
+    
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+```
+
+Use o NVM para instalar uma versao do Node
+
+```bash
+nvm install 18.18
+```
+
+Pode ver quas versoes de node tem no seu equipe com o comando
+
+```bash
+nvm ls
+``` 
+
+Pode mudar de vercao com o comando nvm use <version-number> por exemplo
+
+```bash 
+nvm use 18.18
+```
+</details>
+</br>
+
+- - -
 Tera que dedicar uma terminal exclusivamente com o node correndo o tailwind.
 
 abra outra terminal e navegue ate o mesmo diretorio do projeto.

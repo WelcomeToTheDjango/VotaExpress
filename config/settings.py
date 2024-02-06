@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "enquetes",
     # Third-party apps
     "coverage",
+    "django_browser_reload",
 ]
 
 AUTH_USER_MODEL = "enquetes.User"
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"

@@ -59,3 +59,26 @@ python3 manage.py test
 ```bash
 python3 manage.py loaddata initdata.json
 ```
+
+## Usando o Tailwind 
+
+para usar tailwind precisa instalar node, vose pode seguir [esta guia]("https://www.liquidweb.com/kb/install-nvm-linux/") para instalar node.
+
+Tera que dedicar uma terminal exclusivamente com o node correndo o tailwind.
+
+abra outra terminal e navegue ate o mesmo diretorio do projeto.
+
+O arquivo package.json inclui a dependencia do Tailwndcss, para instalar só precisa rodar:
+
+```bash
+npm i
+```
+
+agora,  o seguinte comando iniciara o tailwindcss
+
+```bash
+npm run tailwind
+```
+para verificar que o proceso funcionou navegue ate http://127.0.0.1:8000/enquetes/
+
+deveria ver a mensagem "Hello Django Team" em cor verde.

@@ -8,21 +8,20 @@
     {% element h1 %}
         {% trans "Sign In" %}
     {% endelement %}
-    <p>
-        {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-    </p>
+
+    <div class="mx-auto w-full max-w-sm">
+    
     {% url 'account_login' as login_url %}
     {% element form form=form method="post" action=login_url tags="entrance,login" %}
         {% slot body %}
             {% csrf_token %}
-            {% element fields form=form unlabeled=True %}
-            {% endelement %}
+            {% element fields form=form unlabeled=True %}{% endelement %}
             {% if redirect_field_value %}
                 <input type="hidden"
                        name="{{ redirect_field_name }}"
                        value="{{ redirect_field_value }}" />
             {% endif %}
+
         {% endslot %}
         {% slot actions %}
             {% element button type="submit" tags="prominent,login" %}
@@ -30,7 +29,15 @@
             {% endelement %}
         {% endslot %}
     {% endelement %}
+
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
+
+    <p class="mt-5">
+        {% blocktrans %}If you have not created an account yet, then please
+        <a class="font-semibold text-blue-700" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+    </p>
+
+</div>
 {% endblock content %}

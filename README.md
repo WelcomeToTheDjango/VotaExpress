@@ -9,7 +9,7 @@ python3 -m venv venv
 ```
 
 ## Activate virtual environment
- 
+
 ```bash
 source venv/bin/activate
 ```
@@ -62,13 +62,15 @@ python3 manage.py loaddata initdata.json
 
 ## Using Tailwind for Development
 
-You need to have node installed, checkout the [node documentation]("https://nodejs.org/en")
+> You need to have node installed, checkout the [node documentation]("https://nodejs.org/en")
 
-The package.json includes tailwind, you can install it with
+The package.json includes tailwind, you can install it with:
+
 ```bash
 npm i
 ```
-for run tailwind you can use the next command
+
+For run tailwind and compile the css in a `output.css` file you can use the command bellow:
 
 ```bash
 npm run tailwind

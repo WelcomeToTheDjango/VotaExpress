@@ -4,19 +4,22 @@
     
 
 <!-- ========= NON FIELD ERROR ========== -->
+
 {% if form.non_field_errors %}
-<div class="non-field-errors">
-    {% for error in form.non_field_errors %}
-    <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
-    {% endfor %}
-</div>
+    <div class="non-field-errors">
+        {% for error in form.non_field_errors %}
+            <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+        {% endfor %}
+    </div>
 {% endif %}
 
 <!-- ========= USERNAME ========== -->
+
 <div class="">
     <label class="hidden" for="{{ form.login.id_for_label }}">
         {{form.login.label}}
     </label>
+
     {% for error in form.login.errors %}
         <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
     {% endfor %}
@@ -26,6 +29,7 @@
 
 
 <!-- ========= PASSWORD ========== -->
+
 <div class="mt-1">
     <label class="hidden" for="{{ form.password.id_for_label }}">
         {{form.password.label}}
@@ -50,4 +54,5 @@
 {% for error in form.remember.errors %}
     <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
 {% endfor %}
+
 {% endwith %}

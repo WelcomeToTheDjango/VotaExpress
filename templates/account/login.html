@@ -6,13 +6,12 @@
 {% endblock head_title %}
 {% block content %}
     
-
-<div class="mx-auto w-full max-w-sm">
-            
+<div class="mx-auto w-full max-w-sm">         
     {% url 'account_login' as login_url %}
+    
     <div class="mb-4">
         {% element h1 %}
-        {% trans "Sejam bem-vindo(a)" %}
+            {% trans "Sejam bem-vindo(a)" %}
         {% endelement %}
     </div>
 
@@ -29,30 +28,26 @@
         {% endslot %}
 
         {% slot actions %}
-        <div class="mt-5 flex text-center">
-            <button type="submit" class="py-2 grow bg-black text-white rounded-s-md">
-                ACCESAR
-            </button>
-            <div class="grow py-2 bg-white rounded-e-md">
-                {% blocktrans %}
-                <a class="" href="{{ signup_url }}">CRIAR CONTA</a>
-                {% endblocktrans %}
-            </div>
-        </div>        
+            <div class="mt-5 flex text-center">
+                <button type="submit" class="py-2 grow bg-black text-white rounded-s-md">
+                    ACCESAR
+                </button>
+                <div class="grow py-2 bg-white rounded-e-md">
+                    {% blocktrans %}
+                        <a class="" href="{{ signup_url }}">CRIAR CONTA</a>
+                    {% endblocktrans %}
+                </div>
+            </div>        
 
         {% comment %} {% element button type="submit" tags="prominent,login" %}
             {% trans "Sign In" %}
         {% endelement %} {% endcomment %}
         
         {% endslot %}
-
     {% endelement %}
 
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
-
-    
-
 </div>
 {% endblock content %}

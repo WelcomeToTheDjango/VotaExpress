@@ -1,26 +1,32 @@
 {% extends "account/base_entrance.html" %}
 {% load i18n %}
+{% load static %}
+
 {% load allauth account %}
 {% block head_title %}
     {% trans "Sign In" %}
 {% endblock head_title %}
 {% block content %}
 
-<!-- Login Container -->
+<section class="max-w-7xl mx-auto px-4 gap-4 flex justify-between items-center flex-col-reverse sm:flex-row ">
 
-<div class="mx-auto w-full max-w-sm">         
+<div class="w-full max-w-sm">
+    <!-- Title medium and big screens -->
+    <h1 class="mb-20 text-4xl font-abril hidden sm:block">VoteExpress</h1>
+    <img src="{% static 'accounts/images/eleicao.svg' %}" alt="caixa de votações">
+</div>
+
+<!-- Login Container -->
+<div class="w-full max-w-sm">         
     {% url 'account_login' as login_url %}
     
-    <!-- Title Container -->
+    
+    <!-- Title small screens -->
+    <h2 class="mb-8 block sm:hidden text-2xl text-center font-abril">VoteExpress</h2>
 
-    <div class="mb-4">
-        {% element h1 %}
-            {% trans "Sejam bem-vindo(a)" %}
-        {% endelement %}
-    </div>
-
+    <h3 class="mb-4 text-2xl text-center">{% translate "Sejam bem-vindo(a)" %}</h3>
+    
     <!-- Rendering Forms -->
-
     {% element form form=form method="post" action=login_url tags="entrance,login" %}
         {% slot body %}
             {% csrf_token %}
@@ -59,4 +65,6 @@
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
 </div>
+
+</section>
 {% endblock content %}

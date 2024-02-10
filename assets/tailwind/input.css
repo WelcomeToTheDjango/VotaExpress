@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face{
+    font-family: 'abril';
+    src: url('../fonts/abrilfatface-regular-webfont.woff') format('woff');
+}

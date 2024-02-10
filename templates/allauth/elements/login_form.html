@@ -8,7 +8,7 @@
 
     <div class="non-field-errors">
         {% for error in form.non_field_errors %}
-            <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+            <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
         {% endfor %}
     </div>
 {% endif %}
@@ -17,7 +17,7 @@
 
 <div class="">
     {% for error in form.login.errors %}
-        <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+        <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
     {% endfor %}
 
     {% render_field form.login placeholder="Nome" class="w-full rounded py-1 px-2" %}
@@ -27,7 +27,7 @@
 
 <div class="mt-1">    
     {% for error in form.password.errors %}
-        <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+        <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
     {% endfor %}
 
     {% render_field form.password placeholder="Senha" class="w-full rounded py-1 px-2" %}
@@ -45,7 +45,7 @@
 </div>
 
 {% for error in form.remember.errors %}
-    <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+    <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
 {% endfor %}
 
 {% endwith %}

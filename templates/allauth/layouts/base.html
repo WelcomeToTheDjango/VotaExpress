@@ -13,19 +13,11 @@
         {% endblock extra_head %}
         <link rel="stylesheet" href="{% static 'tailwind/output.css' %}">
     </head>
-    <body class="bg-violet-100">
+    <body class="bg-violet-100 min-h-screen">
         {% block body %}
-            {% if messages %}
-                <div>
-                    <strong>{% trans "Messages:" %}</strong>
-                    <ul>
-                        {% for message in messages %}<li>{{ message }}</li>{% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-            <div>
-                <strong>{% trans "Menu:" %}</strong>
-                <ul>
+        <header class="w-full bg-violet-200">
+            <div class="w-full max-w-7xl mx-auto px-4 py-2 mb-8">
+                <ul class="flex justify-between">
                     {% if user.is_authenticated %}
                         <li>
                             <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a>
@@ -43,6 +35,15 @@
                     {% endif %}
                 </ul>
             </div>
+        </header>
+            {% if messages %}
+                <div>
+                    <strong>{% trans "Messages:" %}</strong>
+                    <ul>
+                        {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
             {% block content %}
             {% endblock content %}
         {% endblock body %}

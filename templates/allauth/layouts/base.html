@@ -13,29 +13,8 @@
         {% endblock extra_head %}
         <link rel="stylesheet" href="{% static 'tailwind/output.css' %}">
     </head>
-    <body class="bg-violet-100 min-h-screen">
+    <body class="bg-custom-color min-h-screen">
         {% block body %}
-        <header class="w-full bg-violet-200">
-            <div class="w-full max-w-7xl mx-auto px-4 py-2 mb-8">
-                <ul class="flex justify-between">
-                    {% if user.is_authenticated %}
-                        <li>
-                            <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </header>
             {% if messages %}
                 <div>
                     <strong>{% trans "Messages:" %}</strong>

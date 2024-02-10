@@ -8,63 +8,60 @@
 {% endblock head_title %}
 {% block content %}
 
-<section class="max-w-7xl mx-auto px-4 gap-4 flex justify-between items-center flex-col-reverse sm:flex-row ">
+<div class="max-w-full min-h-screen mx-auto px-4 gap-4 flex justify-around items-center flex-col-reverse sm:flex-row ">
+    <div class="w-full max-w-sm">
+        <!-- Title medium and big screens -->
+        <img class="mt-7 ml-8" src="{% static 'accounts/images/logo.svg' %}" alt="Logotype"></img>
+        <img src="{% static 'accounts/images/eleicao.svg' %}" alt="caixa de votações">
+    </div>
 
-<div class="w-full max-w-sm">
-    <!-- Title medium and big screens -->
-    <img src="{% static 'accounts/images/logo.svg' %}" alt="Logotype"></img>
-    <img src="{% static 'accounts/images/eleicao.svg' %}" alt="caixa de votações">
-</div>
-
-<!-- Login Container -->
-<div class="w-full max-w-sm">         
-    {% url 'account_login' as login_url %}
-    
-    
-    <!-- Title small screens -->
-    <h2 class="mb-8 block sm:hidden text-2xl text-center font-abril">VoteExpress</h2>
-
-    <h3 class="mb-4 text-2xl text-center">{% translate "Sejam bem-vindo(a)" %}</h3>
-    
-    <!-- Rendering Forms -->
-    {% element form form=form method="post" action=login_url tags="entrance,login" %}
-        {% slot body %}
-            {% csrf_token %}
-            
-            {% element login_form form=form unlabeled=True %}{% endelement %}
-            
-            {% if redirect_field_value %}
-                <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}" />
-            {% endif %}
-
-        {% endslot %}
-
-        {% slot actions %}
-            <div class="mt-5 flex text-center">
-                <button type="submit" class="py-2 grow bg-black text-white rounded-s-md">
-                    ACCESAR
-                </button>
-                
-                <div class="grow py-2 bg-white rounded-e-md">
-                    {% blocktrans %}
-                        <a class="" href="{{ signup_url }}">CRIAR CONTA</a>
-                    {% endblocktrans %}
-                </div>
-            </div>        
-
-        {% comment %} {% element button type="submit" tags="prominent,login" %}
-            {% trans "Sign In" %}
-        {% endelement %} {% endcomment %}
+    <!-- Login Container -->
+    <div class="w-full max-w-sm">         
+        {% url 'account_login' as login_url %}
         
-        {% endslot %}
-    {% endelement %}
+        <!-- Title small screens -->
+        <h2 class="mb-8 block sm:hidden text-2xl text-center font-abril">VoteExpress</h2>
 
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
+        <h3 class="mb-4 text-2xl text-center">{% translate "Sejam bem-vindo(a)" %}</h3>
+        
+        <!-- Rendering Forms -->
+        {% element form form=form method="post" action=login_url tags="entrance,login" %}
+            {% slot body %}
+                {% csrf_token %}
+                
+                {% element login_form form=form unlabeled=True %}{% endelement %}
+                
+                {% if redirect_field_value %}
+                    <input type="hidden"
+                        name="{{ redirect_field_name }}"
+                        value="{{ redirect_field_value }}" />
+                {% endif %}
+
+            {% endslot %}
+
+            {% slot actions %}
+                <div class="mt-5 flex text-center">
+                    <button type="submit" class="py-2 grow bg-black text-white rounded-s-md">
+                        ACCESAR
+                    </button>
+                    
+                    <div class="grow py-2 bg-white rounded-e-md">
+                        {% blocktrans %}
+                            <a class="" href="{{ signup_url }}">CRIAR CONTA</a>
+                        {% endblocktrans %}
+                    </div>
+                </div>        
+
+            {% comment %} {% element button type="submit" tags="prominent,login" %}
+                {% trans "Sign In" %}
+            {% endelement %} {% endcomment %}
+            
+            {% endslot %}
+        {% endelement %}
+
+        {% if SOCIALACCOUNT_ENABLED %}
+            {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+        {% endif %}
+    </div>
 </div>
-
-</section>
 {% endblock content %}

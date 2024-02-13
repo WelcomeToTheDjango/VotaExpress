@@ -165,3 +165,6 @@ isolate*.log
 
 # I add output for keep clean the code reviews
 **output.css**
+
+## folder for
+templatetags

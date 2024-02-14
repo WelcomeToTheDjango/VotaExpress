@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 
 load_dotenv()  # load .env file in the root directory
@@ -28,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]  # All hosts for development purposes
 
@@ -135,13 +136,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+
 STATICFILES_DIRS = [
     BASE_DIR / "assets"
 ]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 
 # Fixtures configuration
 # https://docs.djangoproject.com/en/4.2/ref/settings/#fixture-dirs 
@@ -155,3 +160,8 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+# Constants for redirecting the user after and before login
+
+LOGIN_URL = reverse_lazy("account_login")
+LOGIN_REDIRECT_URL = reverse_lazy("home")

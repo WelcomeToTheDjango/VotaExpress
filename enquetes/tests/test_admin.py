@@ -1,5 +1,9 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
+from django.urls import reverse_lazy
+from enquetes.admin import (
+    UserAdmin
+)
 
 from ..forms import GetDataFromCSVForm
 from ..models import User
@@ -16,8 +20,8 @@ class CSVUploadTest(TestCase):
         
         cls.username = "admin"
         cls.password = "admin"
-        cls.url = "/admin/enquetes/user/upload-csv/" 
-        cls.base_url = "/admin/enquetes/user/"
+        cls.url = reverse_lazy("admin:user_upload_csv") 
+        cls.base_url = reverse_lazy("admin:enquetes_user_changelist")
 
         User.objects.create_superuser(cls.username, 'admin@example.com', cls.password)
 

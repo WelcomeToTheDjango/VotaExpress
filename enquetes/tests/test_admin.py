@@ -1,14 +1,11 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import TestCase
 from django.urls import reverse_lazy
-from enquetes.admin import (
-    UserAdmin
-)
+from django.test import TestCase
 
 from ..forms import GetDataFromCSVForm
 from ..models import User
 
-# TODO: Use the reverse_lazy function to get the url instead of hardcoding it
+# TODO: Make the code more generic to be used in other models
 # TODO: Better error validation
 
 class CSVUploadTest(TestCase):
@@ -20,7 +17,7 @@ class CSVUploadTest(TestCase):
         
         cls.username = "admin"
         cls.password = "admin"
-        cls.url = reverse_lazy("admin:user_upload_csv") 
+        cls.url = reverse_lazy("admin:enquetes_user_upload_csv") 
         cls.base_url = reverse_lazy("admin:enquetes_user_changelist")
 
         User.objects.create_superuser(cls.username, 'admin@example.com', cls.password)

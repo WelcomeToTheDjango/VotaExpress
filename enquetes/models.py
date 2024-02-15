@@ -87,7 +87,7 @@ class Opcoes(models.Model):
 
     def __str__(self) -> str:
         """
-        The truncator method is used to leave only the first 5 words of the description        
+        The truncator method is used to leave only the first 5 words of the description
         """
 
         return Truncator(self.descricao).words(5)
@@ -136,4 +136,4 @@ class Voto(models.Model):
                 "pergunta invalida, por favor escolha uma opcao que corresponda ao enquete"
             )
 
-        super(Voto, self).save(*args, **kwargs) # Call the "real" save() method.
+        super(Voto, self).save(*args, **kwargs)  # Call the "real" save() method.

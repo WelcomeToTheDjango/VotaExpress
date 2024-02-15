@@ -8,11 +8,12 @@ from ..models import User, Enquete, Categoria, Pergunta, Opcoes, Voto
 
 # TODO: Better error validation
 
+
 class BaseCSVUploadTest(TestCase):
     url = None
     base_url = None
     csv_content_valid = None
-    
+
     @classmethod
     def setUpTestData(cls):
         """
@@ -21,11 +22,11 @@ class BaseCSVUploadTest(TestCase):
 
         if cls is BaseCSVUploadTest:
             raise unittest.SkipTest("Skip BaseCSVUploadTest tests, it's a base class")
-        
+
         cls.username = "admin"
         cls.password = "admin"
 
-        User.objects.create_superuser(cls.username, 'admin@example.com', cls.password)
+        User.objects.create_superuser(cls.username, "admin@example.com", cls.password)
 
     def setUp(self):
         """
@@ -36,38 +37,38 @@ class BaseCSVUploadTest(TestCase):
 
     def test_get_request(self):
         """
-        Check if the form is being rendered properly     
+        Check if the form is being rendered properly
         """
 
         response = self.client.get(self.url)
-        
+
         self.assertEqual(response.status_code, 200)
-        self.assertIsInstance(response.context['form'], GetDataFromCSVForm)
+        self.assertIsInstance(response.context["form"], GetDataFromCSVForm)
 
     def test_post_request_valid_csv(self):
         """
         Check if the upload of a valid csv is working
         """
 
-        csv_file = SimpleUploadedFile('test.csv', self.csv_content_valid)
-        response = self.client.post(self.url, {'csv': csv_file})
+        csv_file = SimpleUploadedFile("test.csv", self.csv_content_valid)
+        response = self.client.post(self.url, {"csv": csv_file})
 
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, expected_url=self.base_url)
-        self.assertEqual(self.get_model().objects.count(), 2)        
+        self.assertEqual(self.get_model().objects.count(), 2)
 
     def test_post_request_invalid_csv(self):
         """
         Verify if the upload of an invalid csv is being handled properly
         """
 
-        csv_content = b'invalid content of csv files'
-        csv_file = SimpleUploadedFile('test.csv', csv_content)
-        response = self.client.post(self.url, {'csv': csv_file})
-        
+        csv_content = b"invalid content of csv files"
+        csv_file = SimpleUploadedFile("test.csv", csv_content)
+        response = self.client.post(self.url, {"csv": csv_file})
+
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, expected_url=self.base_url)
-    
+
     def get_model(self):
         """
         Get the model to be used in the tests, used to count objects
@@ -85,7 +86,7 @@ class UserCSVUploadTest(BaseCSVUploadTest):
 
     url = reverse_lazy("admin:enquetes_user_upload_csv")
     base_url = reverse_lazy("admin:enquetes_user_changelist")
-    csv_content_valid = b'username,password\nuser1,password1'
+    csv_content_valid = b"username,password\nuser1,password1"
 
     def get_model(self):
         return User
@@ -105,12 +106,13 @@ class EnqueteCSVUploadTest(BaseCSVUploadTest):
         """
         Create a Categoria object to be used in the tests
         """
-        
+
         super().setUpTestData()
         Categoria.objects.create(titulo="Categoria 1")
 
     def get_model(self):
         return Enquete
+
 
 class CategoriaCSVUploadTest(BaseCSVUploadTest):
     """
@@ -132,7 +134,9 @@ class PerguntaCSVUploadTest(BaseCSVUploadTest):
 
     url = reverse_lazy("admin:enquetes_pergunta_upload_csv")
     base_url = reverse_lazy("admin:enquetes_pergunta_changelist")
-    csv_content_valid = b"enquete_id,titulo\n1,Qual o seu prato favorito?\n1,Qual o seu filme favorito?"
+    csv_content_valid = (
+        b"enquete_id,titulo\n1,Qual o seu prato favorito?\n1,Qual o seu filme favorito?"
+    )
 
     @classmethod
     def setUpTestData(cls):
@@ -146,6 +150,7 @@ class PerguntaCSVUploadTest(BaseCSVUploadTest):
 
     def get_model(self):
         return Pergunta
+
 
 class OpcoesCSVUploadTest(BaseCSVUploadTest):
     """
@@ -178,7 +183,9 @@ class VotosCSVUploadTest(BaseCSVUploadTest):
 
     url = reverse_lazy("admin:enquetes_voto_upload_csv")
     base_url = reverse_lazy("admin:enquetes_voto_changelist")
-    csv_content_valid = b"usuario_id,enquete_id,pergunta_id,resposta_id\n1,1,1,1\n1,1,1,1"
+    csv_content_valid = (
+        b"usuario_id,enquete_id,pergunta_id,resposta_id\n1,1,1,1\n1,1,1,1"
+    )
 
     @classmethod
     def setUpTestData(cls):

@@ -137,9 +137,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = [
-    BASE_DIR / "assets"
-]
+STATICFILES_DIRS = [BASE_DIR / "assets"]
 
 
 # Default primary key field type
@@ -149,16 +147,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Fixtures configuration
-# https://docs.djangoproject.com/en/4.2/ref/settings/#fixture-dirs 
- 
+# https://docs.djangoproject.com/en/4.2/ref/settings/#fixture-dirs
+
 FIXTURE_DIRS = [BASE_DIR / "assets" / "fixtures"]
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
+    "django.contrib.auth.backends.ModelBackend",
     # `allauth` specific authentication methods, such as login by email
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 # Constants for redirecting the user after and before login

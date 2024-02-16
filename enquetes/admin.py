@@ -23,8 +23,9 @@ class CustomAdmin(admin.ModelAdmin):
         Add the url of the upload_csv view to the admin urls
         """
 
+        url_name = "enquetes_" + self.model._meta.model_name + "_upload_csv"
         urls = super().get_urls()
-        new_urls = [path("upload-csv/", self.upload_csv)]
+        new_urls = [path("upload-csv/", self.upload_csv, name=url_name)]
 
         return new_urls + urls
 

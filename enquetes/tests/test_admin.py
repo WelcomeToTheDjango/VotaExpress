@@ -1,15 +1,16 @@
-import unittest
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse_lazy
 from django.test import TestCase
+import unittest
 
-from ..forms import GetDataFromCSVForm
 from ..models import User, Enquete, Categoria, Pergunta, Opcoes, Voto
+from ..forms import GetDataFromCSVForm
 
 # TODO: Better error validation
 
 
 class BaseCSVUploadTest(TestCase):
+    model = None
     url = None
     base_url = None
     csv_content_valid = None
@@ -55,7 +56,7 @@ class BaseCSVUploadTest(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, expected_url=self.base_url)
-        self.assertEqual(self.get_model().objects.count(), 2)
+        self.assertEqual(self.model.objects.count(), 2)
 
     def test_post_request_invalid_csv(self):
         """
@@ -69,27 +70,16 @@ class BaseCSVUploadTest(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, expected_url=self.base_url)
 
-    def get_model(self):
-        """
-        Get the model to be used in the tests, used to count objects
-
-        Only the subclasses should implement this method
-        """
-
-        pass
-
 
 class UserCSVUploadTest(BaseCSVUploadTest):
     """
     Test the upload of a csv file for the User model
     """
 
+    model = User
     url = reverse_lazy("admin:enquetes_user_upload_csv")
     base_url = reverse_lazy("admin:enquetes_user_changelist")
     csv_content_valid = b"username,password\nuser1,password1"
-
-    def get_model(self):
-        return User
 
 
 class EnqueteCSVUploadTest(BaseCSVUploadTest):
@@ -97,6 +87,7 @@ class EnqueteCSVUploadTest(BaseCSVUploadTest):
     Test the upload of a csv file for the Enquete model
     """
 
+    model = Enquete
     url = reverse_lazy("admin:enquetes_enquete_upload_csv")
     base_url = reverse_lazy("admin:enquetes_enquete_changelist")
     csv_content_valid = b"categoria_id,criador_id,titulo\n1,1,Habitos Alimentares\n1,1,Entretenimento e cultura"
@@ -110,21 +101,16 @@ class EnqueteCSVUploadTest(BaseCSVUploadTest):
         super().setUpTestData()
         Categoria.objects.create(titulo="Categoria 1")
 
-    def get_model(self):
-        return Enquete
-
 
 class CategoriaCSVUploadTest(BaseCSVUploadTest):
     """
     Test the upload of a csv file for the Categoria model
     """
 
+    model = Categoria
     url = reverse_lazy("admin:enquetes_categoria_upload_csv")
     base_url = reverse_lazy("admin:enquetes_categoria_changelist")
     csv_content_valid = b"titulo\nCategoria 1\nCategoria 2"
-
-    def get_model(self):
-        return Categoria
 
 
 class PerguntaCSVUploadTest(BaseCSVUploadTest):
@@ -132,6 +118,7 @@ class PerguntaCSVUploadTest(BaseCSVUploadTest):
     Test the upload of a csv file for the Pergunta model
     """
 
+    model = Pergunta
     url = reverse_lazy("admin:enquetes_pergunta_upload_csv")
     base_url = reverse_lazy("admin:enquetes_pergunta_changelist")
     csv_content_valid = (
@@ -148,15 +135,13 @@ class PerguntaCSVUploadTest(BaseCSVUploadTest):
         Categoria.objects.create(titulo="Categoria 1")
         Enquete.objects.create(categoria_id=1, criador_id=1, titulo="Enquete 1")
 
-    def get_model(self):
-        return Pergunta
-
 
 class OpcoesCSVUploadTest(BaseCSVUploadTest):
     """
     Test the upload of a csv file for the Opcoes model
     """
 
+    model = Opcoes
     url = reverse_lazy("admin:enquetes_opcoes_upload_csv")
     base_url = reverse_lazy("admin:enquetes_opcoes_changelist")
     csv_content_valid = b"pergunta_id,descricao\n1,Arroz\n1,Feijao"
@@ -172,15 +157,13 @@ class OpcoesCSVUploadTest(BaseCSVUploadTest):
         Enquete.objects.create(categoria_id=1, criador_id=1, titulo="Enquete 1")
         Pergunta.objects.create(enquete_id=1, titulo="Pergunta 1")
 
-    def get_model(self):
-        return Opcoes
-
 
 class VotosCSVUploadTest(BaseCSVUploadTest):
     """
     Test the upload of a csv file for the Voto model
     """
 
+    model = Voto
     url = reverse_lazy("admin:enquetes_voto_upload_csv")
     base_url = reverse_lazy("admin:enquetes_voto_changelist")
     csv_content_valid = (
@@ -198,6 +181,3 @@ class VotosCSVUploadTest(BaseCSVUploadTest):
         Enquete.objects.create(categoria_id=1, criador_id=1, titulo="Enquete 1")
         Pergunta.objects.create(enquete_id=1, titulo="Pergunta 1")
         Opcoes.objects.create(pergunta_id=1, descricao="Opcao 1")
-
-    def get_model(self):
-        return Voto

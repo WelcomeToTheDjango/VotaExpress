@@ -32,4 +32,7 @@ jobs:
     - name: Run Tests
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
+        ORIGINS: ${{ secrets.ORIGINS }}
+
       run: python manage.py test

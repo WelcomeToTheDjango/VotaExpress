@@ -1,5 +1,4 @@
 -r requirements.txt
 black==24.2.0
 pytest==8.0.1
-coverage==7.4.1
 pip-upgrader==1.4.15

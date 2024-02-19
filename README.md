@@ -4,29 +4,46 @@ This is a repository for a web application that permits you to create polls in r
 
 ## Create virtual environment
 
+> Atention! if you are in Linux or MacOS use the command bellow, otherwhise change `python3` for just `python`
+
 ```bash
-python3 -m venv venv
+python3 -m venv .venv
 ```
 
 ## Activate virtual environment
- 
+
+Use the command bellow if you are in the Linux or MacOS
+
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
+```
+
+Use this command when your OS is Windows
+
+```bash
+.venv/Scripts/activate
 ```
 
 ## Installing dependencies
 
+> This command will read a text file and installing all dependencies listed:
+
 ```pip
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Creating a .ENV file
 
-> For security reasons we don't disponibilize our SECRET_KEY here, but you can create your .env file in the root of the project using:
+For security reasons we don't disponibilize our SECRET_KEY and some other constants here, but you can create your .env file in the root of the project using:
 
 ```bash
-echo SECRET_KEY="your-secret-here" > .env
+echo "SECRET_KEY=secret_example" >> .env
+echo "ALLOWED_HOSTS=localhost" >> .env
+echo "DEBUG=True" >> .env
+echo "ORIGINS=https://localhost:8000" >> .env
 ```
+
+> Note! Please override the text above, it's just a quick-start for your .env file, is interesting keep it different in production environemnt.
 
 ## Migrating data to the Database
 
@@ -34,6 +51,22 @@ echo SECRET_KEY="your-secret-here" > .env
 
 ```bash
 python3 manage.py migrate
+```
+
+## Using Tailwind for Development
+
+> You need to have node installed, checkout the [node documentation]("https://nodejs.org/en")
+
+The package.json includes tailwind, you can install it with:
+
+```bash
+npm i
+```
+
+For run tailwind and compile the css in a `output.css` file you can use the command bellow:
+
+```bash
+npm run tailwind
 ```
 
 ## Starting server

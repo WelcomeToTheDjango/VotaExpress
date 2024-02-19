@@ -1,0 +1,29 @@
+{% load widget_tweaks %}
+
+{% with attrs.form as form %}
+    
+    
+<!-- ========= NON FIELD ERROR ========== -->
+{% if form.non_field_errors %}
+<div class="non-field-errors">
+    {% for error in form.non_field_errors %}
+    <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% for field in form  %}
+<!-- ========= RENDER EACH FIELD ========== -->
+<div class="">
+    <label class="block mb-1" for="{{ form.title.id_for_label }}">
+        {{field.label}}
+    </label>
+    {% for error in field.errors %}
+        <p class="error_message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+    {% endfor %}
+
+    {% render_field field class="w-full rounded py-1 px-2" %}
+</div>
+{% endfor %}
+
+{% endwith %}

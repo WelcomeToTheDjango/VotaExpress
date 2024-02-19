@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 
 load_dotenv()  # load .env file in the root directory
@@ -28,10 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["*"]  # All hosts for development purposes
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(",")
 
+CSRF_TRUSTED_ORIGINS = os.getenv("ORIGINS").split(",")
 
 # Application definition
 
@@ -47,6 +49,11 @@ INSTALLED_APPS = [
     "enquetes",
     # Third-party apps
     "coverage",
+    "django_browser_reload",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "widget_tweaks",
 ]
 
 AUTH_USER_MODEL = "enquetes.User"
@@ -59,6 +66,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -129,12 +138,28 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+STATICFILES_DIRS = [BASE_DIR / "assets"]
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+
 # Fixtures configuration
-# https://docs.djangoproject.com/en/4.2/ref/settings/#fixture-dirs 
- 
+# https://docs.djangoproject.com/en/4.2/ref/settings/#fixture-dirs
+
 FIXTURE_DIRS = [BASE_DIR / "assets" / "fixtures"]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by email
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+# Constants for redirecting the user after and before login
+
+LOGIN_URL = reverse_lazy("account_login")
+LOGIN_REDIRECT_URL = reverse_lazy("home")

@@ -1,0 +1,51 @@
+{% load widget_tweaks %}
+
+{% with attrs.form as form %}
+    
+
+{% if form.non_field_errors %}
+    <!-- Non-Field-errors -->
+
+    <div class="non-field-errors">
+        {% for error in form.non_field_errors %}
+            <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- ========= USERNAME ========== -->
+
+<div class="">
+    {% for error in form.login.errors %}
+        <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
+    {% endfor %}
+
+    {% render_field form.login placeholder="Nome" class="w-full rounded py-1 px-2" %}
+</div>
+
+<!-- ========= PASSWORD ========== -->
+
+<div class="mt-1">    
+    {% for error in form.password.errors %}
+        <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
+    {% endfor %}
+
+    {% render_field form.password placeholder="Senha" class="w-full rounded py-1 px-2" %}
+</div>
+
+<!-- ========= REMEMBER ========== -->
+
+<div class="mt-2 text-sm flex justify-between">
+    <label class="w-max flex items-center justify-start" for="{{ form.remember.id_for_label }}">
+        {% render_field form.remember class="mr-2" %}
+        Lembrar minha senha
+    </label>
+    
+    <span class="italic">Me ajudas a accesar?</span>    
+</div>
+
+{% for error in form.remember.errors %}
+    <p class="error_message text-red-400 text-sm mb-0-15em">{{ error }}</p>
+{% endfor %}
+
+{% endwith %}

@@ -6,13 +6,14 @@ from django.core.exceptions import ValidationError
 
 
 class User(AbstractUser):
-    """Extende o modelo base do Django
-    aqui podemos adicionar campos personalizados"""
-
-    pass
-
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    senha1 = models.CharField(max_length=20)
+    senha2 = models.CharField(max_length=20)
+    
+   
     def __str__(self):
-        return self.username
+        return self.nome
 
 
 class Categoria(models.Model):
